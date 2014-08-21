@@ -1,0 +1,19 @@
+version = "%%VERSION%%"
+description = "Generate type representations"
+
+requires = "ppx_deriving.api"
+archive(byte) = "ppx_deriving_repr.cma"
+archive(byte, plugin) = "ppx_deriving_repr.cma"
+archive(native) = "ppx_deriving_repr.cmxa"
+archive(native, plugin) = "ppx_deriving_repr.cmxs"
+exists_if = "ppx_deriving_repr.cma"
+
+package "runtime" (
+  version = "%%VERSION%%"
+  description = "Runtime support for generated type representations"
+  archive(byte) = "repr.cma"
+  archive(byte, plugin) = "repr.cma"
+  archive(native) = "repr.cmxa"
+  archive(native, plugin) = "repr.cmxs"
+  exists_if = "repr.cma"
+)
